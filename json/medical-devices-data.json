@@ -1,0 +1,149 @@
+{
+    "medicalDevices":[
+        {
+            "img": "../images/csm.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Welch Allyn",
+            "model": "CSM",
+            "serviceManual": "../pdf-documents/service-manuals/CSM-Service-Manual.pdf",
+            "userManual": "../pdf-documents/user-manuals/CSM-User_Manual.pdf",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/cvsm.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Welch Allyn",
+            "model": "CVSM",
+            "serviceManual": "../pdf-documents/service-manuals/CVSM-Service-Manual.pdf",
+            "userManual": "../pdf-documents/user-manuals/CVSM-User-Manual.pdf",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/mx40.jpeg",
+            "type": "Telemetry",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX40",
+            "serviceManual": "srv manual!!!",
+            "userManual": "usr manual!!!",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        }, 
+        {
+            "img": "../images/mx400.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX400",
+            "serviceManual": "",
+            "userManual": "../pdf-documents/user-manuals/MX400-User-Manual.pdf",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/mx450.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX450",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/mx550.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX550",
+            "serviceManual": "",
+            "userManual": "../pdf-documents/user-manuals/MX400-User-Manual.pdf",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/mx700.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX700",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/mx750.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX7500",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/mx800.jpeg",
+            "type": "Patient Monitor",
+            "manufacturer": "Philips Healthcare",
+            "model": "MX800",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/tc50.jpeg",
+            "type": "ECG",
+            "manufacturer": "Philips Healthcare",
+            "model": "TC50",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        }
+        ,
+        {
+            "img": "../images/r12.jpeg",
+            "type": "ECG",
+            "manufacturer": "Mindray",
+            "model": "R12",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        },
+        {
+            "img": "../images/eli280.jpeg",
+            "type": "ECG",
+            "manufacturer": "Mortara",
+            "model": "Eli280",
+            "serviceManual": "",
+            "userManual": "",
+            "config": "",
+            "software": "",
+            "placeholder1": "",
+            "placeholder2": ""
+        }
+    ]
+}
