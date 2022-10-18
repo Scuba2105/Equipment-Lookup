@@ -4,6 +4,7 @@ async function getData() {
     const rawData = await fetch("../json/medical-devices-data.json");
     const jsonData = await rawData.json();
     equipmentArray.push(...jsonData.medicalDevices)
+    await initialiseEquipmentFields(equipmentArray);
 }
 
 getData();
@@ -29,6 +30,11 @@ const placehold2 = document.querySelector('.sixth-child');
 
 // Select all 6 elements document elements eg manuals, config, software etc.
 const importantDocuments = document.querySelectorAll('.documents a');
+
+// Event listeners for device documents
+importantDocuments.forEach(document => {
+    document.addEventListener('click', enableDisableClick);
+})
 
 // Search function event listeners
 searchButton.addEventListener('click', getSelectedDevice);
@@ -116,84 +122,39 @@ function getModel(inputString) {
     }
 }
 
+function setFormatting(device, sectionVariable, sectionKey, index) {
+    if (device[sectionKey].length == 0) {
+        console.log('empty attribute')
+        sectionVariable.style.opacity = 0.3;
+        sectionVariable.style.cursor = 'default';
+        importantDocuments[index].style.setProperty('--scale-amount', 1);
+    }
+    else {
+        sectionVariable.style.opacity = 1;
+        sectionVariable.style.cursor = 'pointer';
+        importantDocuments[index].style.setProperty('--scale-amount', 1.1);
+    }
+    sectionVariable.setAttribute('href', device[sectionKey]);
+}
+
 function updateEquipmentFields(device) {
     // Set the user manual display and href attribute
-    if (device.userManual.length == 0) {
-        usrManual.style.opacity = 0.3;
-        usrManual.style.cursor = 'default';
-        importantDocuments[0].style.setProperty('--scale-amount', 1);
-    }
-    else {
-        usrManual.style.opacity = 1;
-        importantDocuments[0].style.setProperty('--scale-amount', 1.1);
-        usrManual.style.cursor = 'pointer';
-    }
-    usrManual.setAttribute('href', device.userManual);
-    
+    setFormatting(device, usrManual, 'userManual', 0);
+           
     // Set the service manual display and href attribute
-    if (device.serviceManual.length == 0) {
-        srvManual.style.opacity = 0.3;
-        srvManual.style.cursor = 'default';
-        importantDocuments[1].style.setProperty('--scale-amount', 1);
-    }
-    else {
-        srvManual.style.opacity = 1;
-        srvManual.style.cursor = 'pointer';
-        importantDocuments[1].style.setProperty('--scale-amount', 1.1);
-    }
-    srvManual.setAttribute('href', device.serviceManual);
-    
+    setFormatting(device, srvManual, 'serviceManual', 1);
+        
     // Set the config display and href attribute 
-    if (device.config.length == 0) {
-        configuration.style.opacity = 0.3;
-        configuration.style.cursor = 'default';
-        importantDocuments[2].style.setProperty('--scale-amount', 1);
-    }
-    else {
-        configuration.style.opacity = 1;
-        configuration.style.cursor = 'pointer';
-        importantDocuments[2].style.setProperty('--scale-amount', 1.1);
-    }
-    configuration.setAttribute('href', device.config);
-    
+    setFormatting(device, configuration, 'config', 2)
+        
     // Set the software display and href attribute
-    if (device.software.length == 0) {
-        software.style.opacity = 0.3;
-        software.style.cursor = 'default';
-        importantDocuments[3].style.setProperty('--scale-amount', 1);
-    }
-    else {
-        software.style.opacity = 1;
-        software.style.cursor = 'pointer';
-        importantDocuments[3].style.setProperty('--scale-amount', 1.1);
-    }
-    software.setAttribute('href', device.software);
-    
+    setFormatting(device, software, 'software', 3)
+        
     // Set the placeholder 1 display and href attribute
-    if (device.placeholder1.length == 0) {
-        placehold1.style.opacity = 0.3;
-        placehold1.style.cursor = 'default';
-        importantDocuments[4].style.setProperty('--scale-amount', 1);
-    }
-    else {
-        placehold1.style.opacity = 1;
-        placehold1.style.cursor = 'pointer';
-        importantDocuments[4].style.setProperty('--scale-amount', 1.1);
-    }    
-    placehold1.setAttribute('href', device.placeholder1);
-    
+    setFormatting(device, placehold1, 'placeholder1', 4)
+        
     // Set the placeholder 2 display and href attribute
-    if (device.placeholder2.length == 0) {
-        placehold2.style.opacity = 0.3;
-        placehold2.style.cursor = 'default';
-        importantDocuments[5].style.setProperty('--scale-amount', 1);
-    }
-    else {
-        placehold2.style.opacity = 1;
-        placehold2.style.cursor = 'pointer';
-        importantDocuments[5].style.setProperty('--scale-amount', 1.1);
-    }
-    placehold2.setAttribute('href', device.placeholder1);
+    setFormatting(device, placehold2, 'placeholder2', 5)
 }
 
 function getSelectedDevice() {
@@ -208,6 +169,23 @@ function getSelectedDevice() {
     typeAndManufacturer.innerHTML = `<span class="type">${selectedDevice.type}</span>, <span class="manufacturer">${selectedDevice.manufacturer}</span>`; 
     deviceImage.setAttribute('src', selectedDevice.img);
     updateEquipmentFields(selectedDevice);
+}
+
+function initialiseEquipmentFields(data) {
+    const modelName = modelTitle.textContent
+    console.log(data);
+    const selectedDevice = data.find(device => {
+        return device.model == modelName;
+    });
+    console.log(modelName, selectedDevice)
+    updateEquipmentFields(selectedDevice);
+}
+
+function enableDisableClick(event) {
+    const active = event.target.style.opacity == 1 ? true : false;
+    if (!active) {
+        event.preventDefault();
+    }
 }
 
 // Enter the data in the searchbox if enter key pressed
