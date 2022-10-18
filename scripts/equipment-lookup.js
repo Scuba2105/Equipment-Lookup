@@ -124,7 +124,6 @@ function getModel(inputString) {
 
 function setFormatting(device, sectionVariable, sectionKey, index) {
     if (device[sectionKey].length == 0) {
-        console.log('empty attribute')
         sectionVariable.style.opacity = 0.3;
         sectionVariable.style.cursor = 'default';
         importantDocuments[index].style.setProperty('--scale-amount', 1);
@@ -173,11 +172,9 @@ function getSelectedDevice() {
 
 function initialiseEquipmentFields(data) {
     const modelName = modelTitle.textContent
-    console.log(data);
     const selectedDevice = data.find(device => {
         return device.model == modelName;
     });
-    console.log(modelName, selectedDevice)
     updateEquipmentFields(selectedDevice);
 }
 
