@@ -94,10 +94,12 @@ function addToSearchBar(event) {
     if (event.target.classList.contains('suggestion')) {
         searchBox.value = event.target.firstElementChild.textContent
         searchList.innerHTML = "";
+        searchList.style.visibility = 'hidden';
     }
     else {
         searchBox.value = event.target.textContent;
         searchList.innerHTML = "";
+        searchList.style.visibility = 'hidden';
     }
 }
 
@@ -164,10 +166,16 @@ function getSelectedDevice() {
     const selectedDevice = equipmentArray.find(device => {
         return device.model == modelName;
     });
-    modelTitle.textContent = modelName;
-    typeAndManufacturer.innerHTML = `<span class="type">${selectedDevice.type}</span>, <span class="manufacturer">${selectedDevice.manufacturer}</span>`; 
-    deviceImage.setAttribute('src', selectedDevice.img);
-    updateEquipmentFields(selectedDevice);
+    // If invalid input return nothing else update
+    if (modelName.length == 0) {
+        return
+    }
+    else {
+        modelTitle.textContent = modelName;
+        typeAndManufacturer.innerHTML = `<span class="type">${selectedDevice.type}</span>, <span class="manufacturer">${selectedDevice.manufacturer}</span>`; 
+        deviceImage.setAttribute('src', selectedDevice.img);
+        updateEquipmentFields(selectedDevice);
+    }
 }
 
 function initialiseEquipmentFields(data) {
