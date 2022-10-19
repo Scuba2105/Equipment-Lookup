@@ -1,7 +1,12 @@
 // Import the data for the json file and store in an array
 const equipmentArray = []; 
+
+function handleError(err) {
+    console.log(err);
+}
+
 async function getData() {
-    const rawData = await fetch("../json/medical-devices-data.json");
+    const rawData = await fetch("../json/medical-devices-data.json").catch(handleError);
     const jsonData = await rawData.json();
     equipmentArray.push(...jsonData.medicalDevices)
     await initialiseEquipmentFields(equipmentArray);
