@@ -14,6 +14,8 @@ async function getData() {
 
 getData();
 
+const menuOpenArray = [false, false, false, false, false, false, false, false, false]; 
+
 // Define the variables required for the search functionality.
 const searchList = document.querySelector('.search-list');
 const searchBox = document.querySelector('.searchbox');
@@ -49,9 +51,23 @@ window.addEventListener("keydown", enterInputData);
 // Sidebar menu options node list
 menuOptions = document.querySelectorAll('.category');
 
+// Elements for containing the submenus
+const sub1 = document.querySelector('.sub1');
+const sub2 = document.querySelector('.sub2');
+const sub3 = document.querySelector('.sub3');
+const sub4 = document.querySelector('.sub4');
+const sub5 = document.querySelector('.sub5');
+const sub6 = document.querySelector('.sub6');
+const sub7 = document.querySelector('.sub7');
+const sub8 = document.querySelector('.sub8');
+const sub9 = document.querySelector('.sub9');
+
+// Submenus array
+const subMenuArray = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9];
+
 // Event listeners for each menu option
 menuOptions.forEach(option => {
-    option.addEventListener('click', openSubMenu);
+    option.addEventListener('click', openMenu);
 })
 
 // Filter the equipment array to match the search input 
@@ -206,42 +222,173 @@ function enterInputData(event) {
 }
 
 // Adjust the sidebar menu for when options are clicked
-function rotateArrow(element) {
+function openSubMenu(element) {
     menuOptions.forEach((option, index) => {
         option.querySelector(':last-child').setAttribute('class', `arrow${index + 1}`);
     })
+
+    subMenuArray.forEach(menu => {
+        menu.innerHTML = '';
+    })
+    
     // If statements based on which sidebar menu option is selected. 
     // The arrow is changed and the submenu is displayed.
     if (element.firstElementChild.classList.contains('admin')) {
-        element.querySelector(':last-child').classList.add('menu1-clicked'); 
+        menuOpenArray[0] = !menuOpenArray[0];
+        const menuOpen = menuOpenArray[0];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu1-clicked'); 
+            sub1.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow1');
+            sub1.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('technical')) {
-        element.querySelector(':last-child').classList.add('menu2-clicked');
+        menuOpenArray[1] = !menuOpenArray[1];
+        const menuOpen = menuOpenArray[1];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu2-clicked'); 
+            sub2.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow2');
+            sub2.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('contacts')) {
-        element.querySelector(':last-child').classList.add('menu3-clicked');
+        menuOpenArray[2] = !menuOpenArray[2];
+        const menuOpen = menuOpenArray[2];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu3-clicked'); 
+            sub3.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow3');
+            sub3.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('database')) {
-        element.querySelector(':last-child').classList.add('menu4-clicked');
+        menuOpenArray[3] = !menuOpenArray[3];
+        const menuOpen = menuOpenArray[3];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu4-clicked'); 
+            sub4.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow4');
+            sub4.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('alerts')) {
-        element.querySelector(':last-child').classList.add('menu5-clicked');
+        menuOpenArray[4] = !menuOpenArray[4];
+        const menuOpen = menuOpenArray[4];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu5-clicked'); 
+            sub5.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow5');
+            sub5.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('training')) {
-        element.querySelector(':last-child').classList.add('menu6-clicked');
+        menuOpenArray[5] = !menuOpenArray[5];
+        const menuOpen = menuOpenArray[5];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu6-clicked'); 
+            sub6.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow6');
+            sub6.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('ohs')) {
-        element.querySelector(':last-child').classList.add('menu7-clicked');
+        menuOpenArray[6] = !menuOpenArray[6];
+        const menuOpen = menuOpenArray[6];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu7-clicked'); 
+            sub7.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow7');
+            sub7.innerHTML = '';
+        }
     }
     else if (element.firstElementChild.classList.contains('procurement')) {
-        element.querySelector(':last-child').classList.add('menu8-clicked');
+        menuOpenArray[7] = !menuOpenArray[7];
+        const menuOpen = menuOpenArray[7];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu8-clicked'); 
+            sub8.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow8');
+            sub8.innerHTML = '';
+        }
     }
     else {
-        element.querySelector(':last-child').classList.add('menu9-clicked');
+        menuOpenArray[8] = !menuOpenArray[8];
+        const menuOpen = menuOpenArray[8];
+        if (menuOpen == true) { 
+            element.querySelector(':last-child').classList.add('menu9-clicked'); 
+            sub9.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
+            <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
+        }
+        else {
+            element.querySelector(':last-child').setAttribute('class', 'arrow9');
+            sub9.innerHTML = '';
+        }
     }
 }
 
-function openSubMenu() {
-    rotateArrow(this);    
+// Highlight the paths/borders to the selected submenu
+function highlightPath() {
+    const selectedPath = this.firstElementChild;
+    selectedPath.style.borderLeft = '2px solid red'
+    selectedPath.style.borderBottom = '2px solid red'
+}
+
+function unHighlightPath() {
+    const selectedPath = this.firstElementChild;
+    selectedPath.style.borderLeft = '2px solid #c8c9ca'
+    selectedPath.style.borderBottom = '2px solid #c8c9ca'
+}
+
+function openMenu() {
+ openSubMenu(this);
+ const options = this.nextElementSibling.querySelectorAll('.sub-menu');
+ options.forEach(option => {
+        option.addEventListener('mouseover', highlightPath)
+        option.addEventListener('mouseout', unHighlightPath) 
+        })
 }
 

@@ -147,6 +147,41 @@ body {
     transform: translateX(121px) rotate(90deg);
 }
 
+.sub-menu {
+    width: auto;
+    height: 30px;
+    display: block;
+    margin-left: 30px;
+    font-size: 14px;
+    display: flex;
+    border-left: 2px solid #c8c9ca;
+}
+
+.sub-menu:hover {
+    background-color: #727194;
+}
+
+.space {
+    margin-left: -1px;
+    width: 40px;
+    height: calc(50%);
+    display: inline-block;
+    border-bottom-left-radius: 8px;
+    border-left: 2px solid #c8c9ca;
+    border-bottom: 2px solid #c8c9ca;
+}
+
+.sub-menu:last-child {
+    border-left: none;
+    transform: translateX(1px);
+}
+
+.sub-text {
+    margin-left: 8px;
+    align-self: center;
+    color: #c8c9ca;
+}
+
 /* Format the main in formation section */
 .main {
     grid-column: 2 / -1;
@@ -165,22 +200,22 @@ body {
 
 /* Format the search criteria region */
 .searchbox {
-    width: 50%;
+    width: 40%;
     height: 45px;
-    font-size: 1.2rem;
-    transform: translateX(53px);
+    font-size: 1.1rem;
+    transform: translateX(28px);
 }
 
 
 .search-button {
     display: flex;
-    height: 40px;
-    width: 100px;
+    height: 35px;
+    width: 90px;
     border: 1px solid rgb(99, 99, 100);
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    transform: translateX(-54px);
+    transform: translateX(-72px);
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
@@ -190,7 +225,7 @@ body {
 
 .search-button:active {
     box-shadow: none;
-    transform: translate(-53px, 0.7px);
+    transform: translate(-70px, 0.7px);
     transition: all 0.2s ease-out;
 }
 
@@ -212,6 +247,7 @@ body {
     height: 30px;
     width: auto;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    transform: translateX(-30px)
 }
 
 .add-new:active {
@@ -300,13 +336,14 @@ body {
 .update {
     position: absolute;
     top: 315px;
-    left: 1000px; 
+    left: 1150px; 
     height: 55px;
     width: 60px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-    background-color: #f36c6c;
-    border: 1px solid rgb(114, 3, 3);
+    background-color: #c8c9ca;
+    border: 1px solid rgb(31, 30, 30);
     border-radius: 5px;
+    color: #4b4a4a;
 }
 
 .update:active {
