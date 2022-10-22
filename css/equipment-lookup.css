@@ -51,7 +51,7 @@ body {
     align-items: center;   
 }
 
-.category:hover {
+.menuHighlight {
     text-decoration: none;
     background-color: #727194;
     border-left: 5px solid #e23737;
@@ -149,7 +149,7 @@ body {
 
 .sub-menu {
     width: auto;
-    height: 30px;
+    height: 40px;
     display: block;
     margin-left: 30px;
     font-size: 14px;
@@ -157,13 +157,9 @@ body {
     border-left: 2px solid #c8c9ca;
 }
 
-.sub-menu:hover {
-    background-color: #727194;
-}
-
 .space {
     margin-left: -1px;
-    width: 40px;
+    width: 20px;
     height: calc(50%);
     display: inline-block;
     border-bottom-left-radius: 8px;
@@ -177,9 +173,15 @@ body {
 }
 
 .sub-text {
-    margin-left: 8px;
+    margin-left: 28px;
     align-self: center;
     color: #c8c9ca;
+    text-decoration: none;
+}
+
+.sub-text:hover {
+    background-color: #727194;
+    color: white;
 }
 
 /* Format the main in formation section */

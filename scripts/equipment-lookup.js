@@ -66,8 +66,10 @@ const sub9 = document.querySelector('.sub9');
 const subMenuArray = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9];
 
 // Event listeners for each menu option
-menuOptions.forEach(option => {
+menuOptions.forEach((option) => {
     option.addEventListener('click', openMenu);
+    option.addEventListener('mouseover', highlightMenu);
+    option.addEventListener('mouseout', removeHighlight);
 })
 
 // Filter the equipment array to match the search input 
@@ -357,6 +359,7 @@ function openSubMenu(element) {
         menuOpenArray[8] = !menuOpenArray[8];
         const menuOpen = menuOpenArray[8];
         if (menuOpen == true) { 
+            element.classList.add('menuHighlight');
             element.querySelector(':last-child').classList.add('menu9-clicked'); 
             sub9.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
@@ -364,31 +367,26 @@ function openSubMenu(element) {
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
+            element.classList.remove('menuHighlight');
             element.querySelector(':last-child').setAttribute('class', 'arrow9');
             sub9.innerHTML = '';
         }
     }
 }
 
-// Highlight the paths/borders to the selected submenu
-function highlightPath() {
-    const selectedPath = this.firstElementChild;
-    selectedPath.style.borderLeft = '2px solid red'
-    selectedPath.style.borderBottom = '2px solid red'
+function highlightMenu() {
+    this.classList.add('menuHighlight');
 }
 
-function unHighlightPath() {
-    const selectedPath = this.firstElementChild;
-    selectedPath.style.borderLeft = '2px solid #c8c9ca'
-    selectedPath.style.borderBottom = '2px solid #c8c9ca'
+function removeHighlight() {
+    const menuOptionsArray = Array.from(menuOptions);
+    const index = menuOptionsArray.indexOf(this);
+    if (!menuOpenArray[index]) {
+        this.classList.remove('menuHighlight');
+    }
 }
 
 function openMenu() {
  openSubMenu(this);
- const options = this.nextElementSibling.querySelectorAll('.sub-menu');
- options.forEach(option => {
-        option.addEventListener('mouseover', highlightPath)
-        option.addEventListener('mouseout', unHighlightPath) 
-        })
 }
 
