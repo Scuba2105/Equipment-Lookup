@@ -226,7 +226,8 @@ function enterInputData(event) {
 // Adjust the sidebar menu for when options are clicked
 function openSubMenu(element) {
     menuOptions.forEach((option, index) => {
-        option.querySelector(':last-child').setAttribute('class', `arrow${index + 1}`);
+        option.children[1].setAttribute('class', `arrow`);
+        option.setAttribute('class', 'category');
     })
 
     subMenuArray.forEach(menu => {
@@ -235,123 +236,139 @@ function openSubMenu(element) {
     
     // If statements based on which sidebar menu option is selected. 
     // The arrow is changed and the submenu is displayed.
-    if (element.firstElementChild.classList.contains('admin')) {
+    if (element.firstElementChild.firstElementChild.classList.contains('admin')) {
         menuOpenArray[0] = !menuOpenArray[0];
         const menuOpen = menuOpenArray[0];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu1-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub1.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow1');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub1.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('technical')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('technical')) {
         menuOpenArray[1] = !menuOpenArray[1];
         const menuOpen = menuOpenArray[1];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu2-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub2.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow2');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub2.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('contacts')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('contacts')) {
         menuOpenArray[2] = !menuOpenArray[2];
         const menuOpen = menuOpenArray[2];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu3-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub3.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow3');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub3.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('database')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('database')) {
         menuOpenArray[3] = !menuOpenArray[3];
         const menuOpen = menuOpenArray[3];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu4-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub4.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow4');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub4.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('alerts')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('alerts')) {
         menuOpenArray[4] = !menuOpenArray[4];
         const menuOpen = menuOpenArray[4];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu5-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub5.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow5');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub5.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('training')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('training')) {
         menuOpenArray[5] = !menuOpenArray[5];
         const menuOpen = menuOpenArray[5];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu6-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub6.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow6');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub6.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('ohs')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('ohs')) {
         menuOpenArray[6] = !menuOpenArray[6];
         const menuOpen = menuOpenArray[6];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu7-clicked'); 
+            element.children[1].classList.add('menu-clicked'); 
+            element.classList.add('menuHighlight');
             sub7.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow7');
+            element.querySelector(':last-child').setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub7.innerHTML = '';
         }
     }
-    else if (element.firstElementChild.classList.contains('procurement')) {
+    else if (element.firstElementChild.firstElementChild.classList.contains('procurement')) {
         menuOpenArray[7] = !menuOpenArray[7];
         const menuOpen = menuOpenArray[7];
         if (menuOpen == true) { 
-            element.querySelector(':last-child').classList.add('menu8-clicked'); 
+            element.children[1].classList.add('menu-clicked');
+            element.classList.add('menuHighlight'); 
             sub8.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.querySelector(':last-child').setAttribute('class', 'arrow8');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub8.innerHTML = '';
         }
     }
@@ -360,15 +377,15 @@ function openSubMenu(element) {
         const menuOpen = menuOpenArray[8];
         if (menuOpen == true) { 
             element.classList.add('menuHighlight');
-            element.querySelector(':last-child').classList.add('menu9-clicked'); 
+            element.classList.add('menuHighlight');
             sub9.innerHTML = `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder1</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder2</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder3</a></div>
             <div class="sub-menu"><div class="space"></div><a class="sub-text" href="">Placeholder4great</a></div>`;
         }
         else {
-            element.classList.remove('menuHighlight');
-            element.querySelector(':last-child').setAttribute('class', 'arrow9');
+            element.children[1].setAttribute('class', 'arrow');
+            element.classList.add('menuHighlight');
             sub9.innerHTML = '';
         }
     }

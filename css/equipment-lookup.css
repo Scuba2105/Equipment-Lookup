@@ -30,7 +30,7 @@ body {
     height: 65px;
     margin: auto 0 auto 20px; 
 }
-
+/* ========================================================/*
 /* Format the sidebar */
 .sidebar {
     grid-column: 1 / span 1;
@@ -47,8 +47,17 @@ body {
     font-size: 15px;
     padding: 10.2px 0px 10.2px 6%; 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;   
+}
+
+.category-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu-clicked {
+    transform: rotate(90deg);
 }
 
 .menuHighlight {
@@ -65,87 +74,6 @@ body {
     width: 25px;
     margin-right: 20px;
 } 
-
-.arrow1 {
-    font-size: 10px;
-    transform: translateX(115px);
-}
-
-.arrow2 {
-    font-size: 10px;
-    transform: translateX(65px);
-}
-
-.arrow3 {
-    font-size: 10px;
-    transform: translateX(158px);
-}
-
-.arrow4 {
-    font-size: 10px;
-    transform: translateX(184px);
-}
-
-.arrow5 {
-    font-size: 10px;
-    transform: translateX(90.5px);
-}
-
-.arrow6 {
-    font-size: 10px;
-    transform: translateX(158px);
-}
-
-.arrow7 {
-    font-size: 10px;
-    transform: translateX(161px);
-}
-
-.arrow8 {
-    font-size: 10px;
-    transform: translateX(129px);
-}
-
-.arrow9 {
-    font-size: 10px;
-    transform: translateX(121px);
-}
-
-.menu1-clicked {
-    transform: translateX(115px) rotate(90deg);
-}
-
-.menu2-clicked {
-    transform: translateX(65px) rotate(90deg);
-}
-
-.menu3-clicked {
-    transform: translateX(158px) rotate(90deg);
-}
-
-.menu4-clicked {
-    transform: translateX(184px) rotate(90deg);
-}
-
-.menu5-clicked {
-    transform: translateX(90.5px) rotate(90deg);
-}
-
-.menu6-clicked {
-    transform: translateX(158px) rotate(90deg);
-}
-
-.menu7-clicked {
-    transform: translateX(161px) rotate(90deg);
-}
-
-.menu8-clicked {
-    transform: translateX(129px) rotate(90deg);
-}
-
-.menu9-clicked {
-    transform: translateX(121px) rotate(90deg);
-}
 
 .sub-menu {
     width: auto;
@@ -183,7 +111,7 @@ body {
     background-color: #727194;
     color: white;
 }
-
+/* ===================================================*/
 /* Format the main in formation section */
 .main {
     grid-column: 2 / -1;
