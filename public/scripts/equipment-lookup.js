@@ -225,22 +225,22 @@ function enterInputData(event) {
 
 // Define the submenus for each menu category
 const subMenus = {
-    sub1: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub2: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub3: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub4: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub5: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub6: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub7: ['placeholder1', 'placeholder2', 'placeholder3'],
-    sub8: ['placeholder1', 'placeholder2', 'placeholder3', 'placeholder4'],
-    sub9: ['placeholder1', 'placeholder2'],    
+    sub1: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"], ['placeholder4',"../html/test.html"]],
+    sub2: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"], ['placeholder4',"../html/test.html"]],
+    sub3: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"], ['placeholder4',"../html/test.html"]],
+    sub4: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"]],
+    sub5: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"], ['placeholder4',"../html/test.html"]],
+    sub6: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"]],
+    sub7: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"]],
+    sub8: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"], ['placeholder3',"../html/test.html"], ['placeholder4',"../html/test.html"]],
+    sub9: [['placeholder1',"../html/test.html"], ['placeholder2',"../html/test.html"]]
 }
 
 // Create submenu html output
 function outputSubMenu(sub) {
     const subArray = subMenus[sub];
     return subArray.map(element => {
-        return `<div class="sub-menu"><div class="space"></div><a class="sub-text" href="">${element}</a></div>`
+        return `<div class="sub-menu"><div class="space"></div><a class="sub-text" href=${element[1]}>${element[0]}</a></div>`
     }).join('');
 }
 

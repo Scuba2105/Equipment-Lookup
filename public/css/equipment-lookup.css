@@ -359,4 +359,11 @@ body {
     height: 35px;
 }
 
+.createPopup {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    z-index: 10;
+}
+
 

@@ -8,7 +8,7 @@
     <script src="../scripts/equipment-lookup.js" defer></script>
     <title>Document</title>
 </head>
-<div>
+<body>
     <div class="container">
         <header class="header">
             <a href="_blank"><img class="health-logo" src="../images/health-logo.png"></a>
@@ -58,5 +58,22 @@
             </div>
         </div>
     </div>
+    <div class="createPopup">
+        <div class="formCreate" id="popupForm">
+          <form action="/equipment-create" method="post" class="formContainer">
+            <h2>Please Log in</h2>
+            <label for="email">
+              <strong>E-mail</strong>
+            </label>
+            <input type="text" id="email" placeholder="Your Email" name="email" required>
+            <label for="psw">
+              <strong>Password</strong>
+            </label>
+            <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+            <button type="submit" class="btn">Log in</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+      </div>
 </body>
 </html>
